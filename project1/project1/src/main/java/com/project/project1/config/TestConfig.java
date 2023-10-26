@@ -26,3 +26,8 @@ public class TestConfig implements CommandLineRunner {
 		userRepository.saveAll(Arrays.asList(u1, u2));
 	}
 }
+
+// Class the configuration just for the test profile, we are using to seeding DB.
+// We make the dependency by calling userRepository, and we need to "desacoplar" 
+// and associate an instance at the class called. But spring do this for us by using 
+// @Autowired
