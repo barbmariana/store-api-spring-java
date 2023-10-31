@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,6 +30,7 @@ public class User implements Serializable {
 	
 	//Association 1 User can have many Orders, need to be instantiate because is a collection:
 	@OneToMany(mappedBy = "client")
+	@JsonIgnore //JPA carries the objects Many to one, so Order will list the user, but the other size dont do this because it will crash
 	private List<Order> orders = new ArrayList<>();
 	
 	public User() {}
