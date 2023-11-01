@@ -23,4 +23,23 @@ public class OrderService {
 		Optional<Order> obj = repository.findById(id);
 		return obj.get();
 	}
+	public Order insert(Order obj) {
+		return repository.save(obj);
+	}
+	public Order update(Long id, Order obj) {
+		Order entity = repository.getReferenceById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	private void updateData(Order ent, Order obj) {
+		ent.setClient(obj.getClient());
+		ent.setMoment(obj.getMoment());
+		ent.setPayment(obj.getPayment());
+		ent.setOrderStatus(obj.getOrderStatus());
+	}
+	public void delete(Long id)
+	{
+		Order ent = repository.getReferenceById(id);
+		repository.delete(ent);
+	}
 }

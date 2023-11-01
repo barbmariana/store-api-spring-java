@@ -15,14 +15,33 @@ import com.project.project1.repositories.OrderRepository;
 public class CategoryService {
 	
 	@Autowired
-	private CategoryRepository category;
+	private CategoryRepository repository;
 	
 	public List<Category> findAll(){
-		return category.findAll();
+		return repository.findAll();
 	}
 	public Category findByID(Long id)
 	{
-		Optional<Category> obj = category.findById(id);
+		Optional<Category> obj = repository.findById(id);
 		return obj.get();
+	}
+	
+	public Category insert(Category obj) {
+		return repository.save(obj);
+	}
+
+	public Category update(Long id, Category obj)
+	{
+		Category entity = repository.getReferenceById(id);
+		updateData(entity, obj);
+		return repository.save(entity);
+	}
+	private void updateData(Category ent, Category obj)
+	{
+		ent.setName(obj.getName());
+	}
+	public void delete(Long id)
+	{
+		repository.deleteById(id);
 	}
 }
