@@ -1,5 +1,5 @@
 # Java Spring Boot API
-This is an API based in a store or e-coomerce store. 
+Hi, welcome to my Java Spring Boot API. This project is a complete API based in a store or e-coomerce store. 
 
 ## The project
 Create an store API where we can do the basic CRUD requests using JAVA and Spring Boot.
