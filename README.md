@@ -5,7 +5,7 @@ Hi, welcome to my Java Spring Boot API. This project is a complete API based in 
 Create an store API where we can do the basic CRUD requests using JAVA and Spring Boot.
 
 ## Goal
-Modeling the store entities and uses. Use Spring suit to develop the application.
+Modeling the store entities and uses.
 
 ## Technologies
 Java, Spring Boot, Spring Web, Spring Suite, Postman
